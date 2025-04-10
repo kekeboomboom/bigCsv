@@ -15,20 +15,19 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * @author: keboom
- * @date: 2025/4/10
+ * {@code @author:} keboom
+ * {@code @date:} 2025/4/10
  */
 public class BigExcelUtil {
 
     // Split data into chunks of 800,000 rows per sheet to avoid Excel row limits
-    private final int maxRowsPerSheet = 80_0000;
+    private static final int maxRowsPerSheet = 80_0000;
 
     /**
      * 合并 excel 文件，每个文件的头部是要保持一致的
      *
-     * @return
      */
-    public void mergeExcelFile(List<File> fileList, String mergePath) {
+    public static void mergeExcelFile(List<File> fileList, String mergePath) {
         List<List<String>> dataList = new ArrayList<>();
         List<List<String>> header = new ArrayList<>();
 
